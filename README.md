@@ -1,5 +1,7 @@
 # esk-aurelia
 
+[![Build Status](https://travis-ci.org/eaststrong/esk-aurelia.svg?branch=master)](https://travis-ci.org/eaststrong/esk-aurelia)
+
 This project is bootstrapped by [aurelia/new](https://github.com/aurelia/new).
 
 ## Start dev web server
