@@ -1,0 +1,66 @@
+{
+  "dependencies": {
+    "@aurelia/testing": "dev",
+    "@aurelia/ts-jest": "dev",
+    "@aurelia/webpack-loader": "dev",
+    "@types/jest": "latest",
+    "@types/node": "latest",
+    "@typescript-eslint/eslint-plugin": "latest",
+    "@typescript-eslint/parser": "latest",
+    "aurelia": "dev",
+    "autoprefixer": "latest",
+    "css-loader": "latest",
+    "eslint": "latest",
+    "file-loader": "latest",
+    "htmlhint": "latest",
+    "html-webpack-plugin": "latest",
+    "jest": "latest",
+    "jest-transform-stub": "latest",
+    "less": "latest",
+    "lesshint": "latest",
+    "less-loader": "latest",
+    "postcss": "latest",
+    "postcss-loader": "latest",
+    "rimraf": "latest",
+    "style-loader": "latest",
+    "to-string-loader": "latest",
+    "ts-loader": "latest",
+    "typescript": "latest",
+    "url-loader": "latest",
+    "webpack": "latest",
+    "webpack-bundle-analyzer": "latest",
+    "webpack-cli": "latest",
+    "webpack-dev-server": "latest"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.ts",
+      "!src/**/*.d.ts"
+    ],
+    "transform": {
+      "\\.(css|less|sass|scss|styl|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "jest-transform-stub",
+      "\\.(ts|html)$": [
+        "@aurelia/ts-jest",
+        {
+          "defaultShadowOptions": {
+            "mode": "open"
+          }
+        }
+      ]
+    }
+  },
+  "name": "esk-aurelia",
+  "private": true,
+  "scripts": {
+    "analyze": "rimraf dist && webpack --env production --analyze",
+    "build": "rimraf dist && webpack --env production",
+    "lint": "npm run lint:js && npm run lint:html && npm run lint:css",
+    "lint:css": "lesshint \"src/**/*.less\"",
+    "lint:html": "htmlhint -c .htmlhintrc src",
+    "lint:js": "eslint src test --ext .js,.ts",
+    "pretest": "npm run lint",
+    "start": "webpack-dev-server",
+    "test": "jest"
+  }
+}
